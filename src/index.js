@@ -23,12 +23,41 @@ module.exports = function getZerosCount(number, base) {
     }
     tempCount = tempCount / exponent;
     if (count == 0) {
-      count = tempCount;
+      count = Math.floor(tempCount);
     } else if (count > tempCount) {
-      count = tempCount;
+      count = Math.floor(tempCount);
     }
     power++;
     exponent = 0;
   }
-  return count
+  return count;
 }
+
+// let count = 0;
+// let pow = 2;
+// let exp = 0;
+// for (pow; pow < base; pow++) {
+//   // 1 step
+//   let baseCopy = base;
+//   if (baseCopy % pow != 0){
+//     continue;
+//   }
+//   while (baseCopy % pow == 0) {
+//     baseCopy /= pow;
+//     exp++;
+//   }
+//   //2 step
+//   let incCount = 0;
+//   let i = 1; 
+//   while (number >= pow ** i) {
+//     incCount += Math.floor(number / (pow ** i));
+//     i++;
+//   }
+//   //3 step
+//   incCount = Math.floor(incCount / exp);
+//   if (count == 0 || (count > incCount && incCount != 0)){
+//     count = incCount;
+//   }
+
+// }
+// return count;
