@@ -3,7 +3,7 @@ module.exports = function getZerosCount(number, base) {
   let power = 2,
     exponent = 0;
   let baseCopy = base;
-  while (power < base) {
+  while (power <= base) {
     //находим простой множитель
     if (baseCopy % power != 0) {
       power++;
